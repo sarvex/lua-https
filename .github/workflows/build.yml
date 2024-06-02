@@ -24,7 +24,7 @@ jobs:
         run: lua -l "https" ../../../example/test.lua
       - name: Artifact
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: https-macos.zip
           path: build/src/**/https.so
@@ -69,7 +69,7 @@ jobs:
         run: luajit -l "https" ../example/test.lua
       - name: Artifact
         if: matrix.mode.artifact == 1
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: https-ubuntu.zip
           path: install/https.so
@@ -109,7 +109,7 @@ jobs:
       run: ..\LuaJIT\src\luajit ..\example\test.lua
     - name: Artifact
       if: always()
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: https-windows-${{ matrix.arch }}.zip
         path: install/https.dll
